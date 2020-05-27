@@ -1,10 +1,3 @@
-// USE CLASSES AND CONSTRUCTORS FOR CREATING THE GOALS AND THE REST OF THE ITEMS TO BE CREATED
-// YOU ARE SUCH A BOSS***
-
-const Item = {
-	constructor() {}
-};
-
 const createInput = ({ element, label, placeholder }) => {
 	element.innerHTML = `
         <div class="field">
@@ -23,18 +16,17 @@ const createInput = ({ element, label, placeholder }) => {
 	const submitBtn = element.querySelector('.submit');
 	submitBtn.addEventListener('click', () => {
 		createItem();
+		input.focus();
 	});
 
 	const createItem = () => {
 		const itemText = input.value;
 
-		let item = document.createElement('div');
+		const item = document.createElement('div');
 		item.classList.add('notification', 'is-primary');
 		item.innerHTML = `
             ${itemText} 
-            <div class="buttons">
-                <button class="button is-small is-success">Done</button>
-            </div>
+			<button class="button is-small is-success">Done</button>
         `;
 
 		element.appendChild(item);
@@ -42,20 +34,14 @@ const createInput = ({ element, label, placeholder }) => {
 		input.value = '';
 
 		const doneButtons = document.querySelectorAll('.button.is-small.is-success');
-		// console.log(doneButton);
 		doneButtons.forEach((btn) => {
 			btn.addEventListener('click', (e) => {
-				console.log(e.target);
-				e.target.remove();
+				e.target.parentElement.remove();
 			});
 		});
-		// for (let doneBtn of doneButtons) {
-		// 	console.log(doneBtn);
-		// 	doneBtn.addEventListener('click', () => {
-		// 		element.removeChild(item);
-		// 	});
 	};
 };
+
 createInput({
 	element: document.querySelector('#goals'),
 	label: 'Goals',
