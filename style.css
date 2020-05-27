@@ -1,0 +1,16 @@
+#goals .notification.is-primary {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 20px;
+	margin: 0 0 12px;
+}
+
+.field .control {
+	display: flex;
+	justify-content: space-between;
+}
+
+.field .control .button {
+	margin-left: 5px;
+}
