@@ -23,7 +23,7 @@ const createInput = ({ element, label, placeholder }) => {
 		const itemText = input.value;
 
 		const item = document.createElement('div');
-		item.classList.add('notification', 'is-primary');
+		item.classList.add('notification', 'is-link');
 		item.innerHTML = `
             ${itemText} 
 			<button class="button is-small is-success">Done</button>
