@@ -2,7 +2,7 @@ body {
 	min-width: 420px;
 }
 
-#goals .notification.is-link {
+.notification.is-link {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
