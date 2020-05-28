@@ -1,21 +1,3 @@
-const mains = document.querySelectorAll('main');
-const tabs = document.querySelectorAll('.tabs li');
-
-tabs.forEach((tab, index) => {
-	tab.addEventListener('click', () => {
-		for (let tab of tabs) {
-			tab.classList.remove('is-active');
-		}
-
-		for (let main of mains) {
-			main.classList.add('is-hidden');
-		}
-
-		tab.classList.add('is-active');
-		mains[index].classList.remove('is-hidden');
-	});
-});
-
 createInput({
 	element: document.querySelector('#goals'),
 	label: 'Goals',
@@ -35,4 +17,25 @@ createInput({
 	label: 'About Today',
 	placeholder: 'Name 3 things to improve upon today',
 	isHidden: true
+});
+
+const mains = document.querySelectorAll('main');
+const tabs = document.querySelectorAll('.tabs li');
+
+tabs.forEach((tab, index) => {
+	tab.addEventListener('click', () => {
+		for (let tab of tabs) {
+			tab.classList.remove('is-active');
+		}
+
+		for (let main of mains) {
+			main.classList.add('is-hidden');
+		}
+
+		tab.classList.add('is-active');
+		mains[index].classList.remove('is-hidden');
+
+		const mainInput = document.querySelectorAll('main input');
+		mainInput[index].focus();
+	});
 });
